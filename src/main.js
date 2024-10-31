@@ -14,7 +14,7 @@ import 'echarts'
 
 Vue.prototype.$axios = axios
 Vue.prototype.$myurl = 'http://localhost:8081'
-Vue.prototype.$ai_apikey = '' //你的openai apikey
+// Vue.prototype.$ai_apikey = 'mL9np6Jie3ISXurpy2BaT3BlbkFJmeeAFDaH1JDpECDVWH1s' //你的openai apikey
 
 Vue.use(ElementUI);
 Vue.use(VueRouter,ECharts);

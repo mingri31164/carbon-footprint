@@ -76,7 +76,7 @@ export default {
 
 
     getMsg(text) {
-      fetch('http://8.138.12.3:8536/user/chat?msg='+text)
+      fetch('http://localhost:8536/user/chat?msg='+text)
           .then((response) => response.json())
           .then((res) => {
             console.log(res.data);
