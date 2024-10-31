@@ -1,0 +1,1588 @@
+$yellow: rgb(252, 194, 27);
+$yellow-light: #eab000;
+$red: rgb(245, 80, 32);
+$red-dark: #e13b08;
+$red-darker: #ad343e;
+$red-darkest: #982730;
+$brown-black: rgb(64, 0, 0);
+$brown: rgb(194, 120, 20);
+$brown-light: rgb(213, 140, 0);
+$black: #111;
+$green: #8cbd18;
+$green-2: #419e0b;
+$green-light: #c2f056;
+$green-dark: rgb(0, 128, 0);
+$green-darker: rgb(0, 100, 0);
+$orange: #f79003;
+$blue: #006daf;
+$blue-dark: #0061a0;
+$blue-light: rgb(179, 219, 242);
+$pink: rgb(255, 174, 201);
+$gold-light: #ffbf00;
+$gold: #d4af37;
+$gold-dark: #ce9c04;
+$silver: #c0d8e0;
+
+$purple: #a5045a;
+$purple-2: #ea6465;
+$purple-3: #ce3572;
+$purple-blue: #fe6368;
+
+$skin-2: #ffd2b1;
+$skin-3: #daae91;
+$skin-4: #dca86e;
+$skin-5: #8b4a22;
+$skin-6: #452308;
+
+@mixin mid-position {
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+body {
+    background: linear-gradient(to top left, $purple, $purple-2);
+    font-family: "Comfortaa", sans-serif;
+}
+
+aside.context {
+    text-align: center;
+    color: #fff;
+    line-height: 1.7;
+    a {
+        text-decoration: none;
+        color: #fff;
+        padding: 3px 0;
+        border-bottom: 1px dashed;
+        &:hover {
+            border-bottom: 1px solid;
+        }
+    }
+    .explanation {
+        max-width: 700px;
+        margin: 6em auto 0;
+    }
+}
+
+footer {
+    text-align: center;
+    margin: 4em auto;
+    width: 100%;
+    a {
+        text-decoration: none;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px dashed #fff;
+        color: #fff;
+        margin: 5px;
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .icons {
+            margin-top: 12px;
+            display: inline-block;
+            font-size: 20px;
+        }
+    }
+}
+
+.main-content {
+    margin: 4em auto;
+    max-width: 900px;
+    min-width: 800px;
+    display: grid;
+    grid-template-columns: min-content auto max-content;
+    grid-template-rows: 600px;
+    background: #f7f7f7;
+    box-shadow: 0 1px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    * {
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+        }
+    }
+}
+
+.emoji-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 18px;
+    background: linear-gradient(to bottom, $purple-blue, $purple-3);
+    border-radius: 8px 0 0 8px;
+    div {
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        font: 30px "Fredoka One", sans-serif;
+        transform: rotate(180deg);
+        width: 100%;
+        color: #f9f9f9;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.emoji-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+}
+
+.emoji-face {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: $yellow;
+    margin: auto;
+    position: relative;
+    display: inline-block;
+    font-size: 5px;
+    &.skin-1 {
+        background: $yellow;
+    }
+    &.skin-2 {
+        background: $skin-2;
+    }
+    &.skin-3 {
+        background: $skin-3;
+    }
+    &.skin-4 {
+        background: $skin-4;
+    }
+    &.skin-5 {
+        background: $skin-5;
+    }
+    &.skin-6 {
+        background: $skin-6;
+    }
+}
+
+.eyes {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    .eye {
+        position: absolute;
+        border-radius: 50%;
+        background: #111;
+        top: 0;
+        &.left {
+            left: 50%;
+            margin-left: -40px;
+        }
+        &.right {
+            right: 50%;
+            margin-right: -40px;
+        }
+        &.default {
+            width: 25px;
+            height: 30px;
+        }
+        &.startled {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            top: -5px;
+            &.left {
+                margin-left: -45px;
+            }
+            &.right {
+                margin-right: -48px;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                background: #111;
+                border-radius: 50%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 25%;
+            }
+        }
+        &.heart,
+        &.star,
+        &.fire,
+        &.squeeze {
+            background: transparent;
+            &:before {
+                content: "\2764";
+                color: $red;
+                font-size: 50px;
+                top: 0;
+            }
+        }
+        &.heart {
+            &.left {
+                margin-left: -55px;
+                transform: rotate(-15deg);
+            }
+            &.right {
+                margin-right: -10px;
+                transform: rotate(15deg);
+                margin-top: -12px;
+            }
+        }
+        &.star {
+            margin-top: -15px;
+            &:before {
+                content: "\2605";
+                font-size: 60px;
+            }
+            &.left {
+                margin-left: -50px;
+            }
+            &.right {
+                margin-right: -2px;
+            }
+        }
+        &.fire {
+            &:before {
+                content: "\1F525";
+                font-size: 45px;
+            }
+            &.left {
+                transform: rotate(-15deg) scaleX(-1);
+                margin-left: -8px;
+                margin-top: -20px;
+            }
+            &.right {
+                transform: rotate(15deg);
+                margin-top: -20px;
+                margin-right: -10px;
+            }
+        }
+        &.squeeze {
+            &:before {
+                content: ">";
+                color: $black;
+                font-size: 60px;
+                margin-top: -10px;
+                font-weight: 700;
+            }
+            &.right {
+                transform: scaleX(-1);
+            }
+        }
+        &.closed-up,
+        &.closed-down {
+            background: transparent;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            box-shadow: 5px 5px 0 0 $black;
+            transform: rotate(-135deg);
+            top: 20px;
+        }
+        &.closed-down {
+            transform: rotate(45deg);
+            top: -8px;
+        }
+        &.lined {
+            width: 30px;
+            height: 6px;
+            top: 20px;
+            border-radius: 6px;
+        }
+    }
+}
+
+.mouth {
+    height: 25%;
+    width: 58%;
+    background: $black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 14%;
+    z-index: 4;
+    &.default,
+    &.upside,
+    &.open,
+    &.tongue {
+        overflow: hidden;
+        border: 3px solid $black;
+        border-radius: 0 0 250px 250px;
+        &:before {
+            height: 10px;
+            width: 100%;
+            background: #fff;
+            top: 0;
+            laft: 0;
+        }
+    }
+    &.upside {
+        width: 45%;
+        border-radius: 250px 250px 120px 120px;
+    }
+    &.lined {
+        height: 10px;
+        width: 30%;
+        border-radius: 20px;
+        bottom: 25%;
+    }
+    &.open {
+        border-radius: 40px;
+        width: 20%;
+        height: 20%;
+    }
+    &.tongue {
+        overflow: visible;
+        &:before {
+            background: $red;
+            height: 52px;
+            width: 45%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            border-radius: 0 0 20px 20px;
+        }
+        &:after {
+            background: $red-dark;
+            width: 6px;
+            height: 80%;
+            border-radius: 6px;
+            @include mid-position;
+            margin-top: 5px;
+        }
+    }
+    &.frown,
+    &.smile {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border-radius: 50%;
+        transform: rotate(-135deg);
+        box-shadow: 4px 4px 0 0 $black;
+    }
+    &.smile {
+        transform: rotate(45deg);
+        margin-bottom: 20px;
+    }
+    &.curse:before {
+        content: "#@%!";
+        color: #fff;
+        font-size: 20px;
+        padding: 8px 10px;
+        letter-spacing: 3px;
+        font-weight: 700;
+    }
+    &.grimace {
+        border-radius: 40px;
+        background: #fff;
+        height: 30px;
+        bottom: 30px;
+        border: 2px solid;
+        background-image: linear-gradient(
+        to bottom,
+        transparent 14px,
+        $black 14px,
+        #111 16px,
+        transparent 16px
+        ),
+        repeating-linear-gradient(
+                to right,
+                transparent,
+                transparent 14px,
+                #111 14px,
+                #111 16px,
+                transparent 16px
+        );
+    }
+    &.no-mouth {
+        background: transparent;
+    }
+}
+
+.hat {
+    position: absolute;
+    z-index: 8;
+    &.round-hat,
+    &.wizard-hat,
+    &.sorting-hat {
+        width: 180px;
+        height: 30px;
+        border-radius: 50%;
+        background: $pink;
+        top: 0px;
+        left: -15px;
+        &:before {
+            width: 70%;
+            height: 50px;
+            border-radius: 180px 180px 60px 60px;
+            background: $pink;
+            border-bottom: 10px solid $red;
+            right: 30px;
+            top: -40px;
+        }
+    }
+    &.wizard-hat,
+    &.sorting-hat {
+        background: #444;
+        &:before {
+            background: #444;
+            border-bottom-color: #000;
+        }
+        &:after {
+            width: 0;
+            height: 0;
+            margin-top: -110px;
+            margin-left: 25px;
+            border-left: 70px solid transparent;
+            border-right: 53px solid transparent;
+            border-bottom: 100px solid #444;
+            border-radius: 20px;
+        }
+    }
+    &.sorting-hat {
+        background: $brown-black;
+        &:before {
+            content: ":|";
+            color: $brown;
+            padding: 36px 20px;
+            border-bottom: 0;
+            width: 10px;
+            font-size: 40px;
+            top: -75px;
+            right: 63px;
+            background: $brown-black;
+            border-radius: 180px 60px 60px 180px;
+            border-right: 10px solid $brown;
+            transform: rotate(90deg);
+            z-index: 1;
+        }
+        &:after {
+            border-bottom: 100px solid $brown-black;
+        }
+    }
+    &.top-hat {
+        width: 80%;
+        height: 15px;
+        margin: auto;
+        @include mid-position;
+        top: -110px;
+        border-radius: 6px;
+        background: $blue;
+        &:before {
+            width: 80%;
+            @include mid-position;
+            height: 80px;
+            border-radius: 10px 10px 0 0;
+            margin-top: -80px;
+            background: linear-gradient(to bottom, $blue 0%, $blue 80%, $blue-dark 80%);
+        }
+    }
+    &.traffic-cone {
+        width: 70%;
+        height: 100px;
+        margin: auto;
+        @include mid-position;
+        top: -222px;
+        background: linear-gradient(
+        to right,
+        transparent 40%,
+        $orange 40%,
+        $orange 60%,
+        transparent 60%
+        );
+        border-bottom: 15px solid $orange;
+        &:before {
+            bottom: -12px;
+            @include mid-position;
+            background-image: linear-gradient(
+            100deg,
+            transparent 20%,
+            $orange 20%,
+            $orange 50%,
+            transparent 50%
+            ),
+            linear-gradient(
+            260deg,
+            transparent 20%,
+            $orange 20%,
+            $orange 50%,
+            transparent 50%
+            );
+            width: 70%;
+            height: 112px;
+        }
+        &:after {
+            @include mid-position;
+            border-bottom: 40px solid #fff;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            margin-top: 35px;
+            height: 0;
+            width: 47%;
+        }
+    }
+    &.cactus {
+        width: 80%;
+        @include mid-position;
+        top: -120px;
+        height: 15px;
+        border-radius: 8px;
+        background: $brown;
+        &:before {
+            width: 40%;
+            background: linear-gradient(to top right, $green, $green-2);
+            height: 100px;
+            border-radius: 100px 100px 0 0;
+            top: -99px;
+            right: 22px;
+        }
+        &:after {
+            width: 35%;
+            background: linear-gradient(to top right, $green, $green-light);
+            height: 75px;
+            border-radius: 80px 80px 0 0;
+            top: -74px;
+            left: 20px;
+        }
+    }
+    &.mickey {
+        @include mid-position;
+        width: 95%;
+        height: 80px;
+        top: -70px;
+        background: transparent;
+        border-top: 30px solid $black;
+        border-radius: 150px 150px 0 0;
+        &:before,
+        &:after {
+            width: 80px;
+            height: 70px;
+            top: -75px;
+            left: -20px;
+            background: $black;
+            border-radius: 50%;
+        }
+        &:before {
+            transform: rotate(-25deg);
+        }
+        &:after {
+            transform: rotate(25deg);
+            right: -20px;
+            left: auto;
+        }
+    }
+}
+
+.eyebrow {
+    position: absolute;
+    top: 15px;
+    display: inline-block;
+    &:before {
+        content: "(";
+        color: $brown-light;
+        font: 700 30px "Comfortaa", sans-serif;
+        text-shadow: 2px 0 0 $brown-light;
+        transform: rotate(90deg);
+        left: 0;
+    }
+    &.left {
+        left: 42px;
+    }
+    &.right {
+        right: 50px;
+    }
+    &.downwards,
+    &.furrow,
+    &.furrow-far {
+        &:before {
+            transform: rotate(270deg);
+        }
+    }
+    &.furrow {
+        &.left {
+            transform: rotate(40deg);
+            left: 60px;
+        }
+        &.right {
+            transform: rotate(-40deg) scaleX(-1);
+            right: 62px;
+        }
+    }
+    &.up-far {
+        top: 20px;
+        &.left {
+            transform: rotate(-40deg);
+            left: 20px;
+        }
+        &.right {
+            transform: rotate(40deg) scaleX(-1);
+            right: 18px;
+        }
+    }
+    &.furrow-far {
+        top: 25px;
+        &.left {
+            transform: rotate(-35deg);
+            left: 20px;
+        }
+        &.right {
+            transform: rotate(35deg) scaleX(-1);
+            right: 17px;
+        }
+    }
+    &.no-eyebrows:before {
+        content: none;
+    }
+}
+
+.face-extras {
+    position: absolute;
+    &.sweat {
+        width: 35px;
+        height: 35px;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        background: $blue;
+        transform: rotate(-45deg);
+        top: 20px;
+        right: -5px;
+    }
+    &.tears {
+        width: 30px;
+        height: 30px;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        background: $blue;
+        top: 70px;
+        left: 5px;
+        &:before {
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            background: $blue;
+            transform: scaleX(-1);
+            margin-left: 110px;
+        }
+    }
+    &.geek-glasses {
+        width: 100%;
+        top: 50px;
+        height: 5px;
+        background: linear-gradient(
+        to right,
+        $black 15%,
+        transparent 15%,
+        transparent 85%,
+        $black 85%
+        );
+        &:before,
+        &:after {
+            margin-top: -25px;
+            width: 50px;
+            height: 50px;
+            border: 3px solid $black;
+            border-radius: 50%;
+            background: rgba(#fff, 0.15);
+        }
+        &:before {
+            left: 20px;
+        }
+        &:after {
+            right: 20px;
+        }
+    }
+    &.sunglasses {
+        width: 95%;
+        height: 6px;
+        @include mid-position;
+        top: -65px;
+        background: $black;
+        &:before,
+        &:after {
+            background: inherit;
+            width: 70px;
+            height: 35px;
+            border-radius: 5px 5px 150px 150px;
+        }
+        &:before {
+            left: 5px;
+        }
+        &:after {
+            right: 5px;
+        }
+    }
+    &.crescent-glasses {
+        z-index: 4;
+        @include mid-position;
+        height: 3.5px;
+        width: 98%;
+        top: -25px;
+        background: linear-gradient(
+        to right,
+        $gold 20px,
+        transparent 20px,
+        transparent 60px,
+        $gold 60px,
+        $gold 80px,
+        transparent 80px,
+        transparent 130px,
+        $gold 130px
+        );
+        &:before,
+        &:after {
+            width: 50px;
+            height: 24px;
+            border-radius: 4px 4px 50px 50px;
+            border: 2.5px solid $gold;
+            background: rgba($blue-light, 0.9);
+            top: -8px;
+        }
+        &:before {
+            left: 15px;
+        }
+        &:after {
+            right: 15px;
+        }
+    }
+    &.blush {
+        width: 100%;
+        &:before,
+        &:after {
+            width: 35px;
+            height: 35px;
+            background: rgba($red, 0.4);
+            border-radius: 50%;
+            top: 65px;
+        }
+        &:before {
+            left: 10px;
+        }
+        &:after {
+            right: 10px;
+        }
+    }
+    &.bandage {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: rotate(-30deg);
+        background: linear-gradient(
+                to bottom,
+                #fff 20%,
+                #ddd 20%,
+                #ddd 30%,
+                transparent 30%
+        );
+    }
+    &.scarf-gryf,
+    &.scarf-huff,
+    &.scarf-rave,
+    &.scarf-slyt {
+        z-index: 10;
+        width: 40px;
+        height: 60px;
+        background: linear-gradient(
+        $green-darker 30%,
+        $green-darker 80%,
+        transparent 80%
+        ),
+        repeating-linear-gradient(
+        to right,
+        $green-darker,
+        $green-darker 4px,
+        transparent 4px,
+        transparent 7px
+        );
+        transform: rotate(14deg);
+        bottom: -60px;
+        right: 30px;
+        &:before {
+            width: 40px;
+            height: 80px;
+            background: linear-gradient(
+            $green-darker 0%,
+            $green-dark 40%,
+            #ccc 40%,
+            #ccc 45%,
+            $green-dark 45%,
+            $green-dark 55%,
+            #ccc 55%,
+            #ccc 60%,
+            $green-dark 60%,
+            $green-dark 80%,
+            transparent 80%
+            ),
+            repeating-linear-gradient(
+            to right,
+            $green-dark,
+            $green-dark 4px,
+            transparent 4px,
+            transparent 7px
+            );
+            transform: rotate(-45deg);
+            top: -20px;
+            right: -20px;
+        }
+        &:after {
+            width: 132px;
+            height: 40px;
+            background: repeating-linear-gradient(
+            to right,
+            $green-dark 16px,
+            #ccc 16px,
+            #ccc 20px,
+            $green-dark 20px,
+            $green-dark 28px,
+            #ccc 28px,
+            #ccc 32px,
+            $green-dark 32px,
+            $green-dark 60px
+            );
+            transform: rotate(-14deg);
+            top: -30px;
+            left: -80px;
+
+            border-radius: 10px;
+            border-bottom-left-radius: 40px 100px;
+            border-bottom-right-radius: 40px 100px;
+        }
+    }
+    &.scarf-gryf {
+        background: linear-gradient(
+        $red-darkest 30%,
+        $red-darkest 80%,
+        transparent 80%
+        ),
+        repeating-linear-gradient(
+        to right,
+        $red-darkest,
+        $red-darkest 4px,
+        transparent 4px,
+        transparent 7px
+        );
+        &:before {
+            background: linear-gradient(
+            $red-darkest 0%,
+            $red-darker 40%,
+            $gold-light 40%,
+            $gold-light 45%,
+            $red-darker 45%,
+            $red-darker 55%,
+            $gold-light 55%,
+            $gold-light 60%,
+            $red-darker 60%,
+            $red-darker 80%,
+            transparent 80%
+            ),
+            repeating-linear-gradient(
+            to right,
+            $red-darker,
+            $red-darker 4px,
+            transparent 4px,
+            transparent 7px
+            );
+        }
+        &:after {
+            background: repeating-linear-gradient(
+            to right,
+            $red-darker 16px,
+            $gold-light 16px,
+            $gold-light 20px,
+            $red-darker 20px,
+            $red-darker 28px,
+            $gold-light 28px,
+            $gold-light 32px,
+            $red-darker 32px,
+            $red-darker 60px
+            );
+        }
+    }
+    &.scarf-huff {
+        background: linear-gradient($gold-dark 30%, $gold-dark 80%, transparent 80%),
+        repeating-linear-gradient(
+        to right,
+        $gold-dark,
+        $gold-dark 4px,
+        transparent 4px,
+        transparent 7px
+        );
+        &:before {
+            background: linear-gradient(
+            $gold-dark 0%,
+            $yellow-light 40%,
+            $black 40%,
+            $black 45%,
+            $yellow-light 45%,
+            $yellow-light 55%,
+            $black 55%,
+            $black 60%,
+            $yellow-light 60%,
+            $yellow-light 80%,
+            transparent 80%
+            ),
+            repeating-linear-gradient(
+            to right,
+            $yellow-light,
+            $yellow-light 4px,
+            transparent 4px,
+            transparent 7px
+            );
+        }
+        &:after {
+            background: repeating-linear-gradient(
+            to right,
+            $yellow-light 16px,
+            $black 16px,
+            $black 20px,
+            $yellow-light 20px,
+            $yellow-light 28px,
+            $black 28px,
+            $black 32px,
+            $yellow-light 32px,
+            $yellow-light 60px
+            );
+        }
+    }
+    &.scarf-rave {
+        background: linear-gradient($blue-dark 30%, $blue-dark 80%, transparent 80%),
+        repeating-linear-gradient(
+        to right,
+        $blue-dark,
+        $blue-dark 4px,
+        transparent 4px,
+        transparent 7px
+        );
+        &:before {
+            background: linear-gradient(
+            $blue-dark 0%,
+            $blue 40%,
+            $silver 40%,
+            $silver 45%,
+            $blue 45%,
+            $blue 55%,
+            $silver 55%,
+            $silver 60%,
+            $blue 60%,
+            $blue 80%,
+            transparent 80%
+            ),
+            repeating-linear-gradient(
+            to right,
+            $blue,
+            $blue 4px,
+            transparent 4px,
+            transparent 7px
+            );
+        }
+        &:after {
+            background: repeating-linear-gradient(
+            to right,
+            $blue 16px,
+            $silver 16px,
+            $silver 20px,
+            $blue 20px,
+            $blue 28px,
+            $silver 28px,
+            $silver 32px,
+            $blue 32px,
+            $blue 60px
+            );
+        }
+    }
+}
+
+.item {
+    position: absolute;
+    z-index: 20;
+    &.custom {
+        font-size: 12em;
+        bottom: -15px;
+        right: -20px;
+    }
+    &.coffee {
+        right: -20px;
+        border-top: 75px solid #fff;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        height: 0;
+        width: 40px;
+        bottom: -20px;
+        &:before {
+            margin: -55px 0 0 -9px;
+            border-top: 30px solid $brown;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            height: 0;
+            width: calc(100% + 8px);
+        }
+        &:after {
+            background: #333;
+            width: 70px;
+            height: 20px;
+            margin: -90px 0 0 -15px;
+            border-radius: 10px 10px 3px 3px;
+            background: linear-gradient(to bottom, transparent 8px, #555 8px),
+            linear-gradient(
+                    to right,
+                    transparent 10%,
+                    #666 10%,
+                    #666 90%,
+                    transparent 90%
+            );
+        }
+    }
+    &.shield {
+        right: -25px;
+        bottom: -10px;
+        width: 90px;
+        height: 90px;
+        background: radial-gradient(
+        ellipse at center,
+        $red 20%,
+        $red 20%,
+        $red 38%,
+        #eee 38%,
+        #eee 55%,
+        $red 55%
+        );
+        border-radius: 50%;
+        &:before {
+            content: "\2605";
+            color: #fff;
+            font-size: 30px;
+            border-radius: 50%;
+            background: $blue-dark;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include mid-position;
+            margin-top: 30px;
+        }
+    }
+    &.dango {
+        background: $brown;
+        width: 5px;
+        height: 125px;
+        border-radius: 6px;
+        right: -25px;
+        bottom: 0;
+        &:before {
+            top: 60px;
+            left: -13px;
+            background: $green;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: -8px 20px 0 -25px $red;
+            box-shadow: 0 -28px 0 #fff, 0 -56px 0 $pink;
+        }
+    }
+    &.wand {
+        top: 0;
+        right: -20px;
+        background: $brown-light;
+        width: 8px;
+        height: 80px;
+        border-radius: 50% 20px 0 0;
+        &:before {
+            background: $brown;
+            width: 12px;
+            height: 50px;
+            left: -2px;
+            top: 70px;
+            z-index: 0;
+            border-radius: 4px 4px 0 0;
+        }
+        &:after {
+            width: 22px;
+            height: 50px;
+            border-radius: 10px 50px 10px 14px;
+            background: linear-gradient(
+            to bottom,
+            $brown-black 20%,
+            transparent 20%,
+            transparent 60%,
+            $brown-black 60%
+            ),
+            linear-gradient(
+            to right,
+            transparent 15%,
+            $brown-black 15%,
+            $brown-black 90%,
+            transparent 90%
+            );
+            top: 100px;
+            left: -6px;
+        }
+    }
+}
+
+.emoji-choices {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100%);
+    margin: 0 5px 0 0;
+    box-shadow: -3px 0px 50px 1px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-choices__header {
+    background: linear-gradient(to right, rgba($purple-3, 0.4), #f7f7f7);
+    padding: 15px;
+    border-left: 5px solid $purple-3;
+    text-transform: uppercase;
+    font-weight: 700;
+    small {
+        font-size: 70%;
+        margin-left: 5px;
+    }
+}
+
+.emoji-choices__group {
+    box-sizing: border-box;
+    padding: 10px 22px 10px 10px;
+    display: grid;
+    grid-row-gap: 8px;
+    grid-column-gap: 14px;
+    grid-template-columns: repeat(4, 75px);
+}
+
+.emoji-choice__item {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 75px;
+    background: #ebebeb;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/spriteEmoji.jpg);
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 3px solid #ebebeb;
+    font-size: 12px;
+    &:after {
+        content: "aaa";
+        width: calc(100% - 4px);
+        left: -2px;
+        margin-top: 10px;
+        background: #fff;
+        height: auto;
+        opacity: 0;
+        bottom: -20px;
+        font: 700 10px "Comfortaa", sans-serif;
+        transition: 0.2s ease;
+        text-align: center;
+        padding: 5px 5px 3px;
+        word-wrap: break-all;
+        text-transform: uppercase;
+    }
+    &:hover:after {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+.emoji-choices__group--skin {
+    grid-template-columns: repeat(6, 40px);
+    padding: 20px 20px;
+}
+
+.emoji-choice__skin {
+    width: 35px;
+    height: 35px;
+    background: $yellow;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    cursor: pointer;
+    &[data-name="skin-2"] {
+        background: $skin-2;
+    }
+    &[data-name="skin-3"] {
+        background: $skin-3;
+    }
+    &[data-name="skin-4"] {
+        background: $skin-4;
+    }
+    &[data-name="skin-5"] {
+        background: $skin-5;
+    }
+    &[data-name="skin-6"] {
+        background: $skin-6;
+    }
+}
+
+.emoji-choice__item[data-type="eyes"] {
+    &:after {
+        content: "Normal";
+    }
+    &[data-name="startled"] {
+        background-position: -75px 0;
+        &:after {
+            content: "Startled";
+        }
+    }
+    &[data-name="heart"] {
+        background-position: -150px 0;
+        &:after {
+            content: "Heart";
+        }
+    }
+    &[data-name="star"] {
+        background-position: -225px 0;
+        &:after {
+            content: "Star";
+        }
+    }
+    &[data-name="fire"] {
+        background-position: -300px 0;
+        &:after {
+            content: "Fire";
+        }
+    }
+    &[data-name="squeeze"] {
+        background-position: -375px 0;
+        &:after {
+            content: "Oh no";
+        }
+    }
+    &[data-name="closed-up"] {
+        background-position: -450px 0;
+        &:after {
+            content: "Joyful";
+        }
+    }
+    &[data-name="closed-down"] {
+        background-position: -525px 0;
+        &:after {
+            content: "Content";
+        }
+    }
+    &[data-name="lined"] {
+        background-position: 0 -75px;
+        &:after {
+            content: "-__-";
+        }
+    }
+}
+
+.emoji-choice__item[data-type="mouth"] {
+    &[data-name="default"] {
+        background-position: -75px -75px;
+        &:after {
+            content: "Big Smile";
+        }
+    }
+    &[data-name="upside"] {
+        background-position: -150px -75px;
+        &:after {
+            content: "What?!";
+        }
+    }
+    &[data-name="open"] {
+        background-position: -225px -75px;
+        &:after {
+            content: "Shocked";
+        }
+    }
+    &[data-name="tongue"] {
+        background-position: -300px -75px;
+        &:after {
+            content: "Cheeky";
+        }
+    }
+    &[data-name="lined"] {
+        background-position: -375px -75px;
+        &:after {
+            content: "Mmm...";
+        }
+    }
+    &[data-name="frown"] {
+        background-position: -450px -75px;
+        &:after {
+            content: "Frown";
+        }
+    }
+    &[data-name="smile"] {
+        background-position: -525px -75px;
+        &:after {
+            content: "Smile";
+        }
+    }
+    &[data-name="curse"] {
+        background-position: 0 -150px;
+        &:after {
+            content: "Wtf m8";
+        }
+    }
+    &[data-name="grimace"] {
+        background-position: -75px -150px;
+        &:after {
+            content: "Grimace";
+        }
+    }
+    &[data-name="no-mouth"] {
+        &:after {
+            content: "No Mouth";
+        }
+    }
+}
+
+.emoji-choice__item[data-type="eyebrows"] {
+    &[data-name="no-eyebrows"] {
+        &:after {
+            content: "No brows";
+        }
+    }
+    &[data-name="downwards"] {
+        background-position: -150px -150px;
+        &:after {
+            content: "Curious";
+        }
+    }
+    &[data-name="furrow"] {
+        background-position: -225px -150px;
+        &:after {
+            content: "Furrow";
+        }
+    }
+    &[data-name="furrow-far"] {
+        background-position: -300px -150px;
+        &:after {
+            content: "Worried";
+        }
+    }
+    &[data-name="up-far"] {
+        background-position: -375px -150px;
+        &:after {
+            content: "Raised";
+        }
+    }
+}
+
+.emoji-choice__item[data-type="hat"] {
+    &[data-name="no-hat"] {
+        &:after {
+            content: "No hat";
+        }
+    }
+    &[data-name="round-hat"] {
+        background-position: -450px -150px;
+        &:after {
+            content: "a Pink hat";
+        }
+    }
+    &[data-name="wizard-hat"] {
+        background-position: -525px -150px;
+        &:after {
+            content: "Wizard hat";
+        }
+    }
+    &[data-name="sorting-hat"] {
+        background-position: 0 -225px;
+        &:after {
+            content: "sorting hat";
+        }
+    }
+    &[data-name="top-hat"] {
+        background-position: -75px -225px;
+        &:after {
+            content: "top hat";
+        }
+    }
+    &[data-name="traffic-cone"] {
+        background-position: -150px -225px;
+        &:after {
+            content: "traffic cone";
+        }
+    }
+    &[data-name="cactus"] {
+        background-position: -225px -225px;
+        &:after {
+            content: "cactus hat";
+        }
+    }
+    &[data-name="mickey"] {
+        background-position: -300px -225px;
+        &:after {
+            content: "mickey hat";
+        }
+    }
+}
+
+.emoji-choice__item[data-type="face-extras"] {
+    &[data-name="sweat"] {
+        background-position: -375px -225px;
+        &:after {
+            content: "sweat";
+        }
+    }
+    &[data-name="tears"] {
+        background-position: -450px -225px;
+        &:after {
+            content: "tears";
+        }
+    }
+    &[data-name="geek-glasses"] {
+        background-position: -525px -225px;
+        &:after {
+            content: "Geeky glasses";
+        }
+    }
+    &[data-name="sunglasses"] {
+        background-position: 0 -300px;
+        &:after {
+            content: "sunglasses";
+        }
+    }
+    &[data-name="crescent-glasses"] {
+        background-position: -75px -300px;
+        &:after {
+            content: "Crescent glasses";
+        }
+    }
+    &[data-name="blush"] {
+        background-position: -150px -300px;
+        &:after {
+            content: "Blush";
+        }
+    }
+    &[data-name="bandage"] {
+        background-position: -225px -300px;
+        &:after {
+            content: "Head Bandage";
+        }
+    }
+    &[data-name="scarf-gryf"] {
+        background-position: -300px -300px;
+        &:after {
+            content: "Gryffindor Scarf";
+        }
+    }
+    &[data-name="scarf-huff"] {
+        background-position: -375px -300px;
+        &:after {
+            content: "Hufflepuff Scarf";
+        }
+    }
+    &[data-name="scarf-rave"] {
+        background-position: -450px -300px;
+        &:after {
+            content: "Ravenclaw Scarf";
+        }
+    }
+    &[data-name="scarf-slyt"] {
+        background-position: -525px -300px;
+        &:after {
+            content: "Slytherin Scarf";
+        }
+    }
+}
+
+.emoji-choice__item[data-type="item"] {
+    &[data-name="default"] {
+        background-image: none;
+        &:after {
+            content: "No Item";
+        }
+    }
+    &[data-name="coffee"] {
+        background-position: 0 -375px;
+        &:after {
+            content: "Coffee";
+        }
+    }
+    &[data-name="shield"] {
+        background-position: -75px -375px;
+        &:after {
+            content: "Capt America's Shield";
+        }
+    }
+    &[data-name="dango"] {
+        background-position: -150px -375px;
+        &:after {
+            content: "Dango";
+        }
+    }
+    &[data-name="wand"] {
+        background-position: -225px -375px;
+        &:after {
+            content: "Wand";
+        }
+    }
+}
+
+.emoji-choice__item {
+    &[data-name="no-mouth"],
+    &[data-name="no-eyebrows"],
+    &[data-name="no-hat"],
+    &[data-type="item"][data-name="default"] {
+        background-image: none;
+        &:before {
+            content: "\29BB";
+            font-size: 40px;
+            color: #bbb;
+            margin: 15px 18px;
+        }
+    }
+}
+
+.emoji-choice__item-custom {
+    background: none;
+    grid-column: span 4;
+    display: flex;
+    margin: 10px 0;
+    text-transform: uppercase;
+    align-items: center;
+    span {
+        flex: 0 0 60%;
+        line-height: 1.4;
+        padding-right: 10px;
+        font-size: 13px;
+    }
+    input {
+        padding: 8px;
+        border-radius: 4px;
+        border: 2px solid #ebebeb;
+        margin-right: 20px;
+        max-width: 30px;
+        font-size: 20px;
+        &:focus {
+            border-color: $purple;
+            outline: none;
+        }
+    }
+}
+
+.selected {
+    border-color: $purple-3;
+}
+
+.main-content {
+    ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f6f6f6;
+        margin: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, $purple, $purple-2);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: $purple;
+        border-radius: 10px;
+    }
+}

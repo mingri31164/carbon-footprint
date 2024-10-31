@@ -1,0 +1,104 @@
+/*span {*/
+/*    --blur-r: 0.15em;*/
+/*    --main-sat: 50%;*/
+/*    --shadow-sat: 70%;*/
+
+/*    --main-light: 90%;*/
+/*    --main-shadow-light: 50%;*/
+/*    --mid-shadow-light: 40%;*/
+/*    --dark-shadow-light: 30%;*/
+
+/*    --main-shadow-color: hsl(*/
+/*            var(--hue),*/
+/*            var(--shadow-sat),*/
+/*            var(--main-shadow-light)*/
+/*    );*/
+
+/*    --mid-shadow-color: hsl(*/
+/*            var(--hue),*/
+/*            var(--shadow-sat),*/
+/*            var(--mid-shadow-light)*/
+/*    );*/
+
+/*    --dark-shadow-color: hsl(*/
+/*            var(--hue),*/
+/*            var(--shadow-sat),*/
+/*            var(--dark-shadow-light)*/
+/*    );*/
+
+/*    --color: hsl(var(--hue), 74%, var(--main-light));*/
+
+/*    --shadow: 0 0 var(--blur-r) var(--main-shadow-color),*/
+/*    0 0 calc(var(--blur-r) * 2) var(--mid-shadow-color),*/
+/*    0 0 calc(var(--blur-r) * 3) var(--main-shadow-color),*/
+/*    0 0 calc(var(--blur-r) * 3.5) var(--main-shadow-color),*/
+/*    0 0 calc(var(--blur-r) * 4) var(--main-shadow-color),*/
+/*    0 0 calc(var(--blur-r) * 4.5) var(--dark-shadow-color);*/
+
+/*    font-size: 10vmin;*/
+/*    color: var(--color);*/
+/*    font-family: "Cedarville Cursive", cursive;*/
+/*    text-shadow: var(--shadow);*/
+/*}*/
+
+.line:first-of-type {
+    --hue: 40;
+}
+
+.line:nth-of-type(2) {
+    --hue: 290;
+}
+
+.line:nth-of-type(3) {
+    --hue: 330;
+}
+
+.line:nth-of-type(4) {
+    --hue: 185;
+}
+
+.well {
+    --hue: 360;
+    --duration: 6s;
+    --delay: calc(var(--duration) / 4);
+    animation: flicker var(--duration) infinite;
+    /*animation-delay: calc(var(--i) * calc(var(--duration) / 4));*/
+    animation-timing-function: linear;
+}
+
+@keyframes flicker {
+    0%,
+    10%,
+    15%,
+    20%,
+    24% {
+        opacity: 0.9;
+        /*text-shadow: var(--shadow);*/
+    }
+
+    7%,
+    12%,
+    16%,
+    19%,
+    25%,
+    100% {
+        opacity: 0.2;
+        text-shadow: none;
+    }
+}
+
+/* page styles / layout */
+
+body {
+    margin: 0;
+    background-color: #1d1e27;
+    height: 100vh;
+    display: flex;
+}
+
+.lines {
+    margin: auto;
+    display: grid;
+    padding: 1.5em;
+    line-height: 1.1;
+}

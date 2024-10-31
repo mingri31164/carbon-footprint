@@ -1,0 +1,314 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    cursor: url(../碳足迹计算器素材/鼠标.png),default;
+}
+
+.cont{
+    width: 100%;
+    height: 91.44vh;
+    background-image: url("../assets/计算.jpg");
+    position: relative;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.head{
+    width: 49%;
+    height: 10vh;
+    /* background-color: red; */
+    float: left;
+    margin-top: 212px;
+    margin-left: 148px;
+}
+.head ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+    float: left;
+    line-height: normal;
+}
+.head li{
+    list-style: none;
+    width: 14%;
+    height: 90%;
+    /* background-color: blue; */
+    margin-right: 53px;
+    float: left;
+}
+.head li:nth-child(5){
+    margin-right: 0;
+}
+
+
+
+
+/* 按钮设计 */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: all 0.15s;
+}
+
+.head button{
+    font-size: 40px;
+    font-family: Raleway, cursive;
+    border-radius: 10px 10px 12px 12px;
+    box-shadow:
+            0px 8px 0px 0px #2980b9, /* button thickness */
+            0px 0 20px rgba(255,255,255,.2) inset, /* inner glow */
+            2px 30px 0px rgba(255,255,255,.1) inset, /* sublte reflection */
+            5px 15px 30px -10px #000; /* dark shadow underneath */
+    border: 1px solid #2980b9;
+    cursor: pointer;
+    background: #3498db;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 1px #34495e;
+    transform: rotateX(5deg);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.head button i{
+    transform: scale(1.1) translate(0,-1px);
+}
+.head button:hover{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    box-shadow:
+            0px 5px 0px 0px #2980b9, /* button thickness */
+            0px 0 50px rgba(134, 243, 255, 1) inset, /* inner glow */
+            5px 28px 0px rgba(255,255,255,.15) inset, /* sublte reflection */
+            0px 0px 30px rgba(134,243,255,.2), /* outer glow */
+            5px 15px 30px -10px #000; /* dark shadow underneath */
+    color: #fff;
+    filter: saturate(1.5);
+}
+.head button:hover i{
+    transform: rotate(-12deg) translate(1px, -3px) scale(1.2);
+}
+.head button:active{
+    margin-top: 18px;
+    margin-bottom: 2px;
+    box-shadow:
+            0px 2px 0px 0px #2980b9, /* button thickness */
+            0px 0 100px 10px rgba(134, 243, 255, 1) inset, /* inner glow */
+            5px 25px 0px rgba(255,255,255,.1) inset, /* sublte reflection */
+            0px 0px 30px rgba(134,243,255,.5), /* outer glow */
+            5px 15px 30px -10px #000; /* dark shadow underneath */
+    filter: saturate(1.7);
+}
+.head button:active i{
+    transform: rotate(-22deg) translate(2px, -5px) scale(1.3);
+}
+
+.cloth{
+    filter: hue-rotate(255deg) saturate(.8);
+}
+.cloth:hover{
+    filter: hue-rotate(255deg) saturate(1);
+}
+.cloth:active{
+    filter: hue-rotate(255deg) saturate(1.2);
+}
+.food{
+    filter: hue-rotate(155deg);
+}
+.food:hover{
+    filter: hue-rotate(155deg) saturate(1.5);
+}
+.food:active{
+    filter: hue-rotate(155deg) saturate(1.7);
+}
+.live{
+    filter: hue-rotate(255deg) saturate(.8);
+}
+.live:hover{
+    filter: hue-rotate(255deg) saturate(1);
+}
+.live:active{
+    filter: hue-rotate(255deg) saturate(1.2);
+}
+.walk{
+    filter: hue-rotate(155deg);
+}
+.walk:hover{
+    filter: hue-rotate(155deg) saturate(1.5);
+}
+.walk:active{
+    filter: hue-rotate(155deg) saturate(1.7);
+}
+/* .use{
+  filter: hue-rotate(155deg);
+}
+.use:hover{
+  filter: hue-rotate(155deg) saturate(1.5);
+}
+.use:active{
+  filter: hue-rotate(155deg) saturate(1.7);
+} */
+
+.thing{
+    width: 49%;
+    height: 40vh;
+    /* background-color: red; */
+    float: left;
+    margin-top: 40px;
+    margin-left: 140px;
+}
+.thing ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* background-color: #3498db; */
+}
+
+.thing ul li{
+    text-align: center;
+    list-style: none;
+    width: 12%;
+    height: 25%;
+    float: left;
+    margin-right: 70px;
+    margin-bottom: 23px;
+    /* background-color: aqua; */
+}
+.thing ul li:nth-child(5n){
+    margin-right: 0;
+}
+.thing ul li:nth-child(11){
+    margin-bottom: 0;
+}
+.thing ul li:nth-child(12){
+    margin-bottom: 0;
+}
+.thing ul li:nth-child(13){
+    margin-bottom: 0;
+}
+.thing ul li:nth-child(14){
+    margin-bottom: 0;
+}
+.thing ul li:nth-child(15){
+    margin-bottom: 0;
+}
+.thing ul li img{
+    width: 100%;
+    height: 80%;
+    float: left;
+}
+.thing ul li span{
+    width: 100%;
+    height: 10px;
+    float: left;
+    margin-top: 5px;
+}
+
+
+
+
+
+/* 计算机 */
+.cal-head{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    float: right;
+    margin-top: -110px;
+    width: 20%;
+    height: 45px;
+    line-height: 45px;
+    margin-right: 130px;
+     /*background-color: red;*/
+}
+.miaoshu{
+    line-height: 40px;
+    width: 150px;
+    height: 40px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 22px;
+     /*background-color: red;*/
+}
+.miaoshu span{
+    float: left;
+    color: forestgreen;
+    font-size: 24px;
+    font-weight: 550;
+}
+.cal-res{
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    width: 49%;
+    height: 40px;
+    line-height: 40px;
+     /*background-color: red;*/
+    float: right;
+    margin-right: 75px;
+    margin-top: 25px;
+}
+
+
+
+.cal{
+    width: 21.4%;
+    height: 51vh;
+     /*background-color: red;*/
+    float: right;
+    margin-right: 130px;
+    margin-top: -54px;
+}
+
+
+.cal .button {
+    border-radius: 10px 10px 12px 12px;
+    width: 55px;
+    height: 55px;
+    font-size: 35px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: none;
+    color: green;
+    float: left;
+}
+
+.textView {
+    padding-top: 17px;
+    text-align: center;
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 14px;
+    margin-left: 15px;
+    float: left;
+    font-size: 30px;
+    /* padding: 5px; */
+    border: none;
+     /*background-color: yellow;*/
+}
+
+
+.cal table{
+    float: left;
+    width: 100%;
+    height: 60%;
+    margin-top: 60px;
+}
+.golist{
+    background-image: url("../assets/详情.jpg");
+    background-size: 100% 100%;
+    width: 10%;
+    height: 7%;
+    float: right;
+    margin-top: 470px;
+    margin-right: -255px;
+}
