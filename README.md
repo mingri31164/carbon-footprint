@@ -1,4 +1,4 @@
-# wms-web
+# carbon-footprint
 
 ## Project setup
 ```
